@@ -22,7 +22,7 @@ public class Exam
 
         CorrectAnswer = answer;
 
-        // Collapsing two arrays to one
+        // Collapsing two arrays to one, so it'll put one correct answer between incorrect onces
         string[] tempArray = incorrectAnswers;
         string[] newArr = new string[incorrectAnswers.Length + 1];
         for (i = 0; i < tempArray.Length; i++)
