@@ -1,0 +1,110 @@
+<Window x:Class="VP_09_10_HW2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VP_09_10_HW2"
+        mc:Ignorable="d"
+        Title="My Pizza App" Height="300" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="4"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- First Grid that contains radio buttons for sizes of pizza -->
+        <Grid Margin="25,50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Margin="0,0,16,0" Text="Size" FontSize="16"/>
+
+                <RadioButton x:Name="SmallPizza" 
+                         Grid.Row="1"
+                         VerticalAlignment="Center"
+                         Checked="OptionChanged"
+                         Content="Small"
+                         FontSize="16"
+                         />
+
+                <RadioButton x:Name="MediumPizza" 
+                         Grid.Row="2"
+                         VerticalAlignment="Center"
+                         Checked="OptionChanged"
+                         Content="Medium"
+                         FontSize="16" 
+                         />
+
+                <RadioButton x:Name="LargePizza" 
+                         Grid.Row="3"
+                         VerticalAlignment="Center"
+                         Checked="OptionChanged"
+                         Content="Large"
+                         FontSize="16"
+                         />
+
+        </Grid>
+
+        <!-- Second Grid that contains checkboxes for toppings of pizza -->
+        <Grid Grid.Column="2" Margin="25,50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Margin="0,0,16,0" Text="Toppings" FontSize="16"/>
+
+            <CheckBox x:Name="OnionTopping" 
+                         Grid.Row="1"
+                         VerticalAlignment="Center"
+                         Checked="OptionChanged"
+                         Unchecked="OptionChanged"
+                         Content="Onion"
+                         FontSize="16"
+                         />
+
+            <CheckBox x:Name="PepperTopping" 
+                         Grid.Row="2"
+                         VerticalAlignment="Center"
+                         Checked="OptionChanged"
+                         Unchecked="OptionChanged"
+                         Content="Pepper"
+                         FontSize="16"
+                         />
+
+            <CheckBox x:Name="TomatoTopping" 
+                         Grid.Row="3"
+                         VerticalAlignment="Center"
+                         Checked="OptionChanged"
+                         Unchecked="OptionChanged"
+                         Content="Tomato"
+                         FontSize="16"
+                         />
+        </Grid>
+        
+            <!-- Isert total price on both grids-->
+        <TextBlock Margin="0,100,40,0"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Grid.ColumnSpan="3"
+                   FontSize="16"
+                   Text="Price: €"
+                   />
+        
+        <TextBlock x:Name="TotalPrice"
+                   Margin="40,100,0,0"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Grid.ColumnSpan="3"
+                   FontSize="16"
+                   />
+    </Grid>
+</Window>
+
