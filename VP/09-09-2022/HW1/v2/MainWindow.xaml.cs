@@ -14,11 +14,20 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ExamClass;
 
+/** Work made on 10.10.2022
+* By Ivan Kosiakov
+* ID: U214N1534
+*
+* Description: This is an Exam app.
+* The main functionality is to ask user a 5 question
+* and detect the answer of the user. 
+* 
+* After it'll show user how many answers did answered correctly.
+* Also, all answers shuffled every time this app is launched.
+*/
+
 namespace VP_09_10_HW1
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         const int MAX_QUESTION = 5;
