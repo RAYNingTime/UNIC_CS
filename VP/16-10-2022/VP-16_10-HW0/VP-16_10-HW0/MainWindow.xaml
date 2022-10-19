@@ -1,0 +1,114 @@
+﻿<Window x:Class="VP_16_10_HW0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VP_16_10_HW0"
+        mc:Ignorable="d"
+        Title="" Height="450" Width="800">
+    <!-- Trying using a HEX for color -->
+    <Grid Background="#e9f7f4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="4"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Margin="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <!--For the Photos-->
+                <RowDefinition Height="*"/>
+                <!-- Button -->
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Margin="0,0,16,0" Content="First Name"/>
+            <TextBox x:Name="FirstNameTextBox"
+                     Text=""
+                     Grid.Column="1"
+                     VerticalAlignment="Center"/>
+
+            <Label Grid.Row="1"
+                   Margin="0,0,16,0"
+                   Content="Last name"/>
+            <TextBox x:Name="LastNameTextBox"
+                       Text=""
+                       Grid.Column="1"
+                       Grid.Row="1"
+                       VerticalAlignment="Center"/>
+
+            <Label Grid.Row="2"
+                   Margin= "0,0,16,0"
+                   Content="User Type"/>
+            <WrapPanel Grid.Row="2"
+                       Grid.Column="1"
+                       VerticalAlignment="Center"
+                       Orientation="Horizontal">
+                <RadioButton x:Name="StudentButton" Content="Student" Margin="5,0" IsChecked="True"/>
+                <RadioButton x:Name="EmployeeButton" Content="Employee" Margin="5,0"/>
+            </WrapPanel>
+
+            <Label Grid.Row="3" 
+                   Grid.Column="0"
+                   Content="Photos"/>
+            <WrapPanel
+                Name="name"
+                Grid.Row="4"
+                Grid.ColumnSpan="2"
+                Margin="5">
+                
+                <Image Source="img/cat1.jpeg" Height="80" Width="80" Margin="10"/>
+                <Image Source="img/cat2.jpg" Height="80" Width="80" Margin="10"/>
+                <Image Source="img/cat3.jpg" Height="80" Width="80" Margin="10"/>
+                <Image Source="img/ali.jpg" Height="80" Width="80" Margin="10"/>
+                <Image Source="img/cat4.jpg" Height="80" Width="80" Margin="10"/>
+                <Image Source="img/cat5.jpg" Height="80" Width="80" Margin="10"/>
+
+            </WrapPanel>
+
+
+            <Button x:Name="AddUserButton"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Height="30"
+                    Background="LightGray"
+                    Content="Add User" Click="AddUserButton_Click"/>
+        </Grid>
+
+        <Grid Grid.Column="2" Margin="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <!--For the Photos-->
+                <RowDefinition Height="*"/>
+                <!-- Button -->
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0"
+                   Margin= "0,0,16,0"
+                   Content="Users"/>
+
+            <StackPanel x:Name="UserStackPanel"
+                Grid.Row="1" Margin="5"/>
+
+            <Button x:Name="RemoveUserButton"
+                    Grid.Row="2"
+                    Height="30"
+                    Background="DarkRed"
+                    Content="Remove Selected Users" 
+                    Foreground="White"
+                    Click="RemoveUserButton_Click"/>
+             
+            
+        </Grid>
+    </Grid>
+</Window>
