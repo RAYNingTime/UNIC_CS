@@ -1,0 +1,63 @@
+﻿<Window x:Class="FinalPractisesVP.ShoppingList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalPractisesVP"
+        mc:Ignorable="d"
+        Title="ShoppingListWindow" MinHeight="300" MinWidth="420"
+        Height="350" Width="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="4"/>
+            <RowDefinition/>
+            <RowDefinition Height="4"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Menu for Adding a new Item to a List-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Content="Item Name" Margin="5"/>
+                <TextBox x:Name="ItemNameTextBox" Grid.Column="2"
+                         HorizontalAlignment="Stretch" Margin="5"/>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Content="Item Quantity" Margin="5"/>
+                <TextBox x:Name="ItemQuantityTextBox" Grid.Column="1"
+                        HorizontalAlignment="Stretch" Margin="5"/>
+            </Grid>
+
+            <Button x:Name="AddShoppingListButton" Content="Add"
+                    Grid.Column="2" Padding="5" Click="AddShoppingListButton_Click"/>
+        </Grid>
+
+        <!-- Stack Panel for the Shopping List -->
+        <StackPanel Grid.Row="2" x:Name="ShoppingListStackPanel"/>
+
+        <!-- Button for removing an item from List-->
+        <Button Grid.Row="4" x:Name="ShoppingListButton" 
+                HorizontalAlignment="Center" MinHeight="20"
+                Margin="10" Content="Remove Selected Items"
+                Padding="5" Background="#8B0000"
+                Foreground="White" Click="ShoppingListButton_Click"/>
+    </Grid>
+</Window>
